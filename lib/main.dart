@@ -1,25 +1,21 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:fruits_hub_dashboard/core/helper_functions/on_generate_routes.dart';
-import 'package:fruits_hub_dashboard/core/service/get_it_service.dart';
-import 'package:fruits_hub_dashboard/features/dashboard/presentation/views/dashboard_view.dart';
-import 'package:fruits_hub_dashboard/firebase_options.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruit_hub_dashboard/core/helper_functions/on_generate_routes.dart';
+import 'package:fruit_hub_dashboard/core/services/get_it_service.dart';
+import 'package:fruit_hub_dashboard/core/services/supabase_stoarge.dart';
+import 'package:fruit_hub_dashboard/features/dashboard/views/dashboard_view.dart';
+import 'package:fruit_hub_dashboard/firebase_options.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-Future<void> main() async {
+import 'core/services/custom_bloc_observer.dart';
+
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Firebase
-
-  // Supabase
-  await Supabase.initialize(
-    url: 'https://iwhxwcqfcpcblvdifidv.supabase.co',
-    anonKey:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml3aHh3Y3FmY3BjYmx2ZGlmaWR2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk2MjA0NzgsImV4cCI6MjA4NTE5NjQ3OH0.BZp9PXcXXOJbb5Npy3wra7JO6Ed0M-JrRqYXSQ8F83c',
-  );
-  // GetIt setup بعد التهيئة
+  await SupabaseStoargeService.initSupabase();
+  Bloc.observer = CustomBlocObserver();
   setupGetit();
-
   runApp(const MainApp());
 }
 

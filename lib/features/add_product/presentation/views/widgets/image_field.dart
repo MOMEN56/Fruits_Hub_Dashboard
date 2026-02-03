@@ -36,16 +36,20 @@ class _ImageFieldState extends State<ImageField> {
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: Colors.grey),
-              ),
-              child:
-                  fileImage != null
-                      ? ClipRRect(
-                        borderRadius: BorderRadius.circular(16),
-                        child: Image.file(fileImage!),
-                      )
-                      : const Icon(Icons.image_outlined, size: 180),
+                  borderRadius: BorderRadius.circular(
+                    16,
+                  ),
+                  border: Border.all(
+                    color: Colors.grey,
+                  )),
+              child: fileImage != null
+                  ? ClipRRect(
+                      borderRadius: BorderRadius.circular(16),
+                      child: Image.file(fileImage!))
+                  : const Icon(
+                      Icons.image_outlined,
+                      size: 180,
+                    ),
             ),
             Visibility(
               visible: fileImage != null,
@@ -55,9 +59,12 @@ class _ImageFieldState extends State<ImageField> {
                   widget.onFileChanged(fileImage);
                   setState(() {});
                 },
-                icon: const Icon(Icons.close, color: Colors.red),
+                icon: const Icon(
+                  Icons.close,
+                  color: Colors.red,
+                ),
               ),
-            ),
+            )
           ],
         ),
       ),

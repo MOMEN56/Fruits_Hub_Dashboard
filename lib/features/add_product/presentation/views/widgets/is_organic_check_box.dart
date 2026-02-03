@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:fruits_hub_dashboard/core/widgets/custom_check_box.dart';
 
 import '../../../../../core/utils/app_text_styles.dart';
+import 'custom_check_box.dart';
 
 class IsOrganciCheckBox extends StatefulWidget {
   const IsOrganciCheckBox({super.key, required this.onChanged});
@@ -31,7 +31,11 @@ class _IsOrganciCheckBoxState extends State<IsOrganciCheckBox> {
           ),
           textAlign: TextAlign.right,
         ),
-        const Expanded(child: SizedBox(width: 16)),
+        const Expanded(
+          child: SizedBox(
+            width: 16,
+          ),
+        ),
         CustomCheckBox(
           onChecked: (value) {
             isOrganic = value;
