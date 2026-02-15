@@ -21,19 +21,17 @@ class SupabaseStoargeService implements StoarageService {
     String extensionName = b.extension(file.path);
 
     try {
-      final result =
-          await _supabase.client.storage.from('product-images').upload(
-                '$path/$fileName$extensionName',
-                file,
-              );
-      print('✅ Upload succeeded: $result');
+      final result = await _supabase.client.storage
+          .from('product-images')
+          .upload('$path/$fileName$extensionName', file);
       return result;
     } on StorageException catch (e) {
-      print('❌ StorageException: ${e.message}, StatusCode: ${e.statusCode}');
-      rethrow;
+      print('❌ StorageException: ${e.message}');
+      print('StatusCode: ${e.statusCode}');
+      throw Exception('Storage Error ${e.statusCode}: ${e.message}');
     } catch (e) {
       print('❌ Unknown error: $e');
-      rethrow;
+      throw Exception('Unknown Error: $e');
     }
   }
 }
