@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
@@ -15,11 +16,11 @@ class ImagesRepoImpl implements ImagesRepo {
     try {
       String url =
           await stoarageService.uploadFile(image, BackendEndpoint.images);
+      log('Upload success: $url');
       return Right(url);
     } catch (e) {
-      return Left(
-        ServerFailure('Failed to uoload image'),
-      );
+      log('Upload error: $e'); // ✔️ شوف الـ e بالظبط
+      return Left(ServerFailure('Failed to upload image: $e'));
     }
   }
 }

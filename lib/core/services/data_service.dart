@@ -5,7 +5,7 @@ abstract class DatabaseService {
       String? documentId});
   Future<dynamic> getData({
     required String path,
-    String? docuementId,
+    String? documentId, // Corrected spelling from docuementId
     Map<String, dynamic>? query,
   });
   Stream<dynamic> streamData({
@@ -16,7 +16,6 @@ abstract class DatabaseService {
       {required String path,
       required Map<String, dynamic> data,
       String? documentId});
-
   Future<bool> checkIfDataExists(
-      {required String path, required String docuementId});
+      {required String path, required String documentId}); // Corrected spelling
 }

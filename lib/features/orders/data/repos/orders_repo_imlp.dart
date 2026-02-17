@@ -24,6 +24,7 @@ class OrdersRepoImpl implements OrdersRepo {
         yield Right(orders);
       }
     } catch (e) {
+      print('Stream orders error: $e');
       yield Left(ServerFailure('Failed to fetch orders'));
     }
   }

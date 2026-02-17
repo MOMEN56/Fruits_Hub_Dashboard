@@ -2,11 +2,11 @@ import 'dart:io';
 
 import 'package:fruit_hub_dashboard/core/services/stoarage_service.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:path/path.dart' as b;
+import 'package:path/path.dart' as p;
 
 class SupabaseStoargeService implements StoarageService {
   static late Supabase _supabase;
-
+  final SupabaseClient supabase = Supabase.instance.client;
   static initSupabase() async {
     _supabase = await Supabase.initialize(
       url: 'https://iwhxwcqfcpcblvdifidv.supabase.co',
@@ -17,21 +17,19 @@ class SupabaseStoargeService implements StoarageService {
 
   @override
   Future<String> uploadFile(File file, String path) async {
-    String fileName = b.basenameWithoutExtension(file.path);
-    String extensionName = b.extension(file.path);
+    String fileName = p.basenameWithoutExtension(file.path);
+    String extension = p.extension(file.path);
+    String fullPath = '$path/$fileName$extension';
 
     try {
-      final result = await _supabase.client.storage
-          .from('product-images')
-          .upload('$path/$fileName$extensionName', file);
-      return result;
-    } on StorageException catch (e) {
-      print('❌ StorageException: ${e.message}');
-      print('StatusCode: ${e.statusCode}');
-      throw Exception('Storage Error ${e.statusCode}: ${e.message}');
+      await supabase.storage.from('product-images').uploadBinary(
+            fullPath,
+            file.readAsBytesSync(),
+            fileOptions: FileOptions(contentType: 'image/$extension'),
+          );
+      return supabase.storage.from('product-images').getPublicUrl(fullPath);
     } catch (e) {
-      print('❌ Unknown error: $e');
-      throw Exception('Unknown Error: $e');
+      throw Exception('Upload failed: $e');
     }
   }
 }

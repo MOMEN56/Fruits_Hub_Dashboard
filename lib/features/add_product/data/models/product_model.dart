@@ -56,15 +56,14 @@ class ProductModel {
     return {
       'name': name,
       'code': code,
-      'sellingCount': sellingCount,
       'description': description,
       'price': price,
-      'isFeatured': isFeatured,
-      'imageUrl': imageUrl,
-      'expirationsMonths': expirationsMonths,
-      'numberOfCalories': numberOfCalories,
-      'unitAmount': unitAmount,
-      'isOrganic': isOrganic,
+      'is_featured': isFeatured,
+      'image_url': imageUrl,
+      'expirations_months': expirationsMonths,
+      'number_of_calories': numberOfCalories,
+      'unit_amount': unitAmount,
+      'is_organic': isOrganic,
       'reviews': reviews.map((e) => e.toJson()).toList()
     };
   }

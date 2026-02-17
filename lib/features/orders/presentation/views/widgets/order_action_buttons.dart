@@ -42,7 +42,7 @@ class OrderActionButtons extends StatelessWidget {
           child: ElevatedButton(
             onPressed: () {
               context.read<UpdateOrderCubit>().updateOrder(
-                  status: OrderStatusEnum.accepted,
+                  status: OrderStatusEnum.delivered,
                   orderID: orderEntity.orderID);
             },
             child: const Text('Delivered'),

@@ -1,0 +1,180 @@
+
+===== D:\flutter\fruits_hub_dashboard\lib\main.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\core\enums\order_enum.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\core\errors\exceptions.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\core\errors\failures.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\core\helper_functions\build_error_bar.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\core\helper_functions\get_order_dummy_data.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\core\helper_functions\on_generate_routes.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\core\repos\images_repo\images_repo.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\core\repos\images_repo\images_repo_impl.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\core\repos\product_repo\products_repo.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\core\repos\product_repo\products_repo_impl.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\core\services\custom_bloc_observer.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\core\services\data_service.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\core\services\firestore_service.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\core\services\fire_storage.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\core\services\get_it_service.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\core\services\stoarage_service.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\core\services\supabase_service.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\core\services\supabase_stoarge.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\core\utils\app_colors.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\core\utils\app_images.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\core\utils\app_text_styles.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\core\utils\backend_endpoint.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\core\widgets\custom_button.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\core\widgets\custom_progress_hud.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\core\widgets\custom_text_field.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\add_product\data\models\product_model.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\add_product\data\models\review_model.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\add_product\domain\entities\product_entity.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\add_product\domain\entities\review_entity.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\add_product\presentation\manger\cubit\add_product_cubit.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\add_product\presentation\manger\cubit\add_product_state.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\add_product\presentation\views\add_product_view.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\add_product\presentation\views\widgets\add_product_view_body.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\add_product\presentation\views\widgets\add_product_view_body_bloc_builder.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\add_product\presentation\views\widgets\custom_check_box.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\add_product\presentation\views\widgets\image_field.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\add_product\presentation\views\widgets\is_featured_check_box.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\add_product\presentation\views\widgets\is_organic_check_box.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\dashboard\views\dashboard_view.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\dashboard\views\widgets\dashboard_view_body.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\orders\data\models\order_model.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\orders\data\models\order_product_model.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\orders\data\models\shipping_address_model.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\orders\data\repos\orders_repo_imlp.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\orders\domain\entities\data\models\order_entity.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\orders\domain\entities\data\models\order_product_entity.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\orders\domain\entities\data\models\shipping_address_entity.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\orders\domain\repos\orders_repo.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\orders\presentation\manger\fetch_order\fetch_orders_cubit.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\orders\presentation\manger\fetch_order\fetch_orders_state.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\orders\presentation\manger\update_order\update_order_cubit.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\orders\presentation\manger\update_order\update_order_state.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\orders\presentation\views\orders_view.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\orders\presentation\views\widgets\filter_section.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\orders\presentation\views\widgets\orders_items_list_view.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\orders\presentation\views\widgets\orders_view_body.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\orders\presentation\views\widgets\order_action_buttons.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\orders\presentation\views\widgets\order_item.dart =====
+
+
+===== D:\flutter\fruits_hub_dashboard\lib\features\orders\presentation\views\widgets\update_order_builder.dart =====
+

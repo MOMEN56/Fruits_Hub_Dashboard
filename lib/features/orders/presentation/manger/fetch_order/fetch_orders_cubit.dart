@@ -10,26 +10,30 @@ class FetchOrdersCubit extends Cubit<FetchOrdersState> {
   FetchOrdersCubit(this.ordersRepo) : super(FetchOrdersInitial());
   final OrdersRepo ordersRepo;
   StreamSubscription? _streamSubscription;
-  void fetchOrders() async {
+
+  void fetchOrders() {
     emit(FetchOrdersLoading());
-    _streamSubscription = ordersRepo.fetchOrders().listen((result) {
-      result.fold((f) {
-        emit(FetchOrdersFailure(f.message));
-      }, (r) {
-        emit(FetchOrdersSuccess(
-          orders: r,
-        ));
-      });
-    });
-    await for (var result in ordersRepo.fetchOrders()) {
-      result.fold((f) {
-        emit(FetchOrdersFailure(f.message));
-      }, (r) {
-        emit(FetchOrdersSuccess(
-          orders: r,
-        ));
-      });
-    }
+    _streamSubscription = ordersRepo.fetchOrders().listen(
+      (result) {
+        result.fold(
+          (f) {
+            emit(FetchOrdersFailure(f.message));
+          },
+          (r) {
+            emit(FetchOrdersSuccess(orders: r));
+          },
+        );
+      },
+      onError: (e, stackTrace) {
+        print('Stream error in Cubit: $e'); // log in Cubit
+        print('Stack trace in Cubit: $stackTrace');
+        emit(FetchOrdersFailure(e.toString()));
+        Future.delayed(const Duration(seconds: 5), fetchOrders);
+      },
+      onDone: () {
+        print('Stream done');
+      },
+    );
   }
 
   @override

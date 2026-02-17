@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:fruit_hub_dashboard/core/repos/product_repo/products_repo.dart';
 import 'package:fruit_hub_dashboard/core/services/data_service.dart';
@@ -11,18 +13,22 @@ class ProductsRepoImpl implements ProductsRepo {
   final DatabaseService databaseService;
 
   ProductsRepoImpl(this.databaseService);
+
   @override
   Future<Either<Failure, void>> addProduct(
       ProductEntity addProductInputEntity) async {
     try {
+      final jsonData = ProductModel.fromEntity(addProductInputEntity).toJson();
+      print('Data to add: $jsonData'); // Debug print
       await databaseService.addData(
         path: BackendEndpoint.productsCollection,
-        data: ProductModel.fromEntity(addProductInputEntity).toJson(),
+        data: jsonData,
       );
-
+      log('Add product success');
       return const Right(null);
     } catch (e) {
-      return Left(ServerFailure('Failed to add product'));
+      log('Add product error: $e');
+      return Left(ServerFailure('Failed to add product: $e'));
     }
   }
 }
