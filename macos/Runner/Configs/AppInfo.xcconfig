@@ -1,0 +1,7 @@
+
+
+PRODUCT_NAME = fruits_hub_dashboard
+
+PRODUCT_BUNDLE_IDENTIFIER = com.example.fruitsHubDashboard
+
+PRODUCT_COPYRIGHT = Copyright © 2026 com.example. All rights reserved.
